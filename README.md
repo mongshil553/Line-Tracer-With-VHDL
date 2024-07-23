@@ -23,4 +23,6 @@ Since the hardware does not have capacitor connected to IR Recieving Sensor, it 
 To avoid this, a rejection code was added. <br>
 
 In addition, to reduce noise that can cause robot to decide wrong rotation control, the robot decides IR Detection with the following instruction; <br>
-//ADD IMAGE
+<img src = "https://github.com/user-attachments/assets/c1547de2-fe85-4005-b0a9-5f30e0423c1a" width="70%" height="70%"> <br>
+By Calculating the amount of sensors detected for each group(shown with the boxes) and applying a threshold, the machine can decide where the line is located more safely. This calculation is done in parallel.
+
