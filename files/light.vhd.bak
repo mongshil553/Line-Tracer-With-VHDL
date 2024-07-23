@@ -1,0 +1,36 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity light is
+	port( clk : in bit;
+			
+			line_sensor : in std_logic_vector(7 downto 0);
+			
+			led : out std_logic_vector(7 downto 0);
+			
+			light_type : integer);
+end light;
+
+architecture design of light is
+begin
+
+	if (light_type = 0) then --normal
+		
+	else --flash
+	
+	end if;
+	
+	process(line_sensor)
+	begin
+		if (light_type = 0) then
+			led <= not line_sensor;
+		end if;
+	end process;
+	
+	process(clk)
+	begin
+	--Flash
+	null;
+	end process;
+	
+end light;

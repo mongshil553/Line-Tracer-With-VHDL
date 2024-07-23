@@ -1,0 +1,38 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+
+entity Turn is
+	port( clk: in bit;
+			line_sensor : in std_logic_vector(7 downto 0);
+			motor_left : out std_logic;
+			motor_right : out std_logic;	
+			status : integer;
+	)
+	
+end Turn;
+
+architecture design of Turn is
+	signal carry_cnt : integer range 0 to 50000 :=0;
+	signal speed : integer range 0 to 50000 := 0;
+	
+begin
+	process(clk)
+	begin
+		if (clk'event and clk='1') then
+			carry_cnt <= carry_cnt + 1;
+			if (carry_cnt >= 49998) then
+				carry_cnt <= 0;
+			end if;
+		end if;
+	end process;
+	
+	process(carry_cnt)
+		if (carry_cnt >= 25000) then
+			motor_left <= '0';
+			motor_right <= '0';
+		elsif (carry_cnt < 25000) then
+			motor_left <= '1';
+			motor_right <= '1';
+		end if;
+	end process;
+end design;

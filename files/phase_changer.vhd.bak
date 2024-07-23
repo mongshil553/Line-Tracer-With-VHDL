@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity phase_changer is
+	port(
+			line_sensor : in std_logic_vector(7 downto 0);
+			led : out std_logic_vector(7 downto 0);
+			
+			sw : in std_logic_vector(7 downto 0)
+	);
+end phase_changer;
+
+architecture design of phase_changer is
+begin
+	process(line_sensor)
+	begin
+		null;
+	end process;
+
+
+end design;

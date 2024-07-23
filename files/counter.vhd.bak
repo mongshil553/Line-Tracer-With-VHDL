@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity counter is
+	port( reset : in std_logic;
+			flag : out std_logic;
+			threshold : in std_logic;
+			clk : in bit
+	)
+end counter;
+
+architecture design of counter is
+signal cnt : integer range 0 to 500000 := 0; --max 10sec
+signal th : boolean := false;
+begin
+	process(reset, clk)
+	begin
+		if (rising_edge(reset)) or (falling_edge(reset)) then
+			cnt <= 0;
+			th <= false;
+			flag <= false;
+		end if;
+		
+		if not th then
+			cnt <= cnt + 1;
+			if cnt >= threshold then
+				th <= true;
+				flag <= true;
+			end if;
+		end if;
+	end if;
+end if;

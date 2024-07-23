@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity rush is
+	port(	rush : out boolean;
+			line_status: in std_logic_vector(2 downto 0);
+			clk : in bit
+	);
+end rush;
+
+architecture design of rush is
+signal cnt : integer range 0 to 10000 := 0;
+signal rushing : boolean := false;
+begin
+	process(clk, line_status)
+	begin
+		if (line_status = "110") or (line_status = "011") then
+			rushing <= False;
+			cnt <= 0;
+		end if;
+		
+		if not rushing then
+			cnt <= cnt + 1;
+			if cnt >= 9988 then --After 1 second since last strong detection, rush
+				rush <= true;
+				rushing <= true;
+			end if;
+		end if;
+	end process;
+end design;
