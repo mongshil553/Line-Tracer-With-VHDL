@@ -4,7 +4,7 @@ Create a Line Tracing Robot using DE0. This board is programmed with VHDL via Al
 Eight IR sensors are used. <br>
 
 <hr>
-<h3>Robot Images</h3>
+<h2>Robot Images</h2>
 <img src = "https://github.com/user-attachments/assets/5b3b396f-27b3-4f20-a66a-27d4bb848a1d" width="40.8%" height="40.8%">
 <img src = "https://github.com/user-attachments/assets/f354e9c3-ee57-4b1e-a8a0-4d04c138cded" width="40.8%" height="40.8%">
 <br>
@@ -13,11 +13,11 @@ Eight IR sensors are used. <br>
 <img src = "https://github.com/user-attachments/assets/821e720c-3278-4f7d-956b-a18b1c638d04" width="30%" height="30%">
 
 <hr>
-<h3>System Architecture</h3>
+<h2>System Architecture</h2>
 <img src = "https://github.com/user-attachments/assets/040c2eff-592b-4dab-9916-e12e889f3952" width="60%" height="60%">
 
 <hr>
-<h3>Technical Difficulties</h3>
+<h2>Technical Difficulties</h2>
 Since the hardware does not have capacitor connected to IR Recieving Sensor, it is very vulnerable to noise. To be specific, when the robot approaches a horizontal line, the sensor value stutters causing the program to incorrectly count the amount of times where robot passed a horizontal line. <br><br>
 
 To avoid this, a rejection code was added. <br>
