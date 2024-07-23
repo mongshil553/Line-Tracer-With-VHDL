@@ -13,8 +13,9 @@ Eight IR sensors are used. <br>
 <img src = "https://github.com/user-attachments/assets/821e720c-3278-4f7d-956b-a18b1c638d04" width="30%" height="30%">
 
 <hr>
-<h3>System Architecture</h3> <br>
-//ADD IMAGE
+<h3>System Architecture</h3>
+<img src = "https://github.com/user-attachments/assets/040c2eff-592b-4dab-9916-e12e889f3952" width="60%" height="60%">
+
 <hr>
 <h3>Technical Difficulties</h3>
 Since the hardware does not have capacitor connected to IR Recieving Sensor, it is very vulnerable to noise. To be specific, when the robot approaches a horizontal line, the sensor value stutters causing the program to incorrectly count the amount of times where robot passed a horizontal line. <br><br>
